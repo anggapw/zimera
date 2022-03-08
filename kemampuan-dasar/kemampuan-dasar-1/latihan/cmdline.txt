@@ -1,0 +1,93 @@
+##########
+cat
+##########
+
+❯ cat > testfile   
+this is test file 
+blablabla
+
+~ via  v16.14.0 took 26s 
+❯ cat testfile  
+this is test file
+blablabla
+
+##########
+mkdir, cd, ls, rmdir, touch, mv, rm
+##########
+
+~ via  v16.14.0 
+❯ mkdir testdir
+
+~ via  v16.14.0 
+❯ cd testdir
+
+~/testdir 
+❯ mkdir test1 test2 test3
+
+~/testdir 
+❯ ls
+test1  test2  test3
+
+~/testdir 
+❯ rmdir test1
+
+~/testdir 
+❯ ls
+test2  test3
+
+~/testdir 
+❯ touch test.txt   
+
+~/testdir 
+❯ ls
+test2  test3  test.txt
+
+~/testdir 
+❯ mv test2 test2a        
+
+~/testdir 
+❯ ls
+test2a  test3  test.txt
+
+~/testdir 
+❯ rm test.txt                    
+
+~/testdir 
+❯ ls
+test2a  test3
+
+##########
+sudo
+##########
+❯ dnf remove code
+Error: This command has to be run with superuser privileges (under the root user on most systems).
+
+~/testdir 
+❯ sudo dnf remove code           
+[sudo] password for agpw-r00t: 
+Dependencies resolved.
+================================================================================
+ Package      Architecture   Version                        Repository     Size
+================================================================================
+Removing:
+ code         x86_64         1.65.0-1646220750.el7          @code         312 M
+
+Transaction Summary
+================================================================================
+Remove  1 Package
+
+Freed space: 312 M
+Is this ok [y/N]:
+
+##########
+history
+##########
+❯ history
+    1  exit
+    2  echo $SHELL
+    3  cat ~/.zshrc
+    4  nano ~/.zshrc
+    5  sudo dnf install powerline-fonts
+    6  fc-cache -vf
+    7  nano ~/.zshrc
+    .....
